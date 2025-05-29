@@ -36,10 +36,11 @@ class Mythread extends Thread {
 public class Syncronization {
 	public  static void main(String[] args) {
 		Display d1=new Display();
+//		Display d2=new Display();
 		Mythread t1=new Mythread(d1,"gazz");
-		Mythread t2=new Mythread(d1, "patil");
+//		Mythread t2=new Mythread(d2, "patil");
 		t1.start();
-		t2.start();
+//		t2.start();
 		
 	}
 	
@@ -108,7 +109,38 @@ public class Syncronization {
   	 
   	 }
  */
+/*
+ Display d1=new Display();
+		Display d2=new Display();
+		Mythread t1=new Mythread(d1,"gazz");
+		Mythread t2=new Mythread(d2, "patil");
+		t1.start();
+		t2.start();
+		
+		
+		
+		
+		
+		
+		
+Even though wish msg is synchronized we will get IRREGULAR output because 
+threads are operating on different java object.
+REASON:If multiple threads are operating on same java object then synchronization is required.
+If multiple threads are operating on multiple java objects, then syncroization is 
+not required.
+		
+		
+		
+Every class in java has a unique lock which is called as class level lock.
+If a thread wants to execute static synchronized method then thread requires class
+level lock. ONce thread got class level lock then it is allowed to execute any
+synchronized method of that class.
+Once method execution completes thread releases the lock.
 
+		
+		
+		
+ */
 
 
 
